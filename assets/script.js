@@ -1,6 +1,7 @@
 let searchInput = $('#search-input');
 let currentApi = 'http://api.openweathermap.org/data/2.5/weather?q=';
 let newApi = 'http://api.openweathermap.org/data/2.5/forecast?q=';
+let uvApi = 'http://api.openweathermap.org/data/2.5/uvi?';
 let apiKey = 'f0ab57e4693bb4a80535f0b3185f2865';
 
 function getCurrentApi(requestUrl) {
@@ -34,6 +35,13 @@ function getCurrentApi(requestUrl) {
             // $('#weather-icon').append(icon);
             $('#icon-img').attr('src', iconurl);
 
+            let lat= data.city.coord.lat;
+            let lon= data.city.coord.lon;
+            getUvApi(lat, lon);
+
+            console.log(lat);
+            console.log(lon);
+
             console.log(conditions);
             console.log(main);
             console.log(wind);
@@ -42,7 +50,20 @@ function getCurrentApi(requestUrl) {
     
 }
 
-
+function getUvApi(lat, lon) {
+    let latParam = 'lat=' + lat;
+    let lonParam = 'lon=' + lon;
+    let uvApiString = uvApi + latParam + '&' + lonParam + '&appid=' + apiKey;
+    fetch(uvApiString)
+         .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        let uvIndex = data.value;
+        $('#uv-index').append("UV Index: " + uvIndex);  
+});
+}
 
 $('.btn').on('click', function (event) {
     event.preventDefault();

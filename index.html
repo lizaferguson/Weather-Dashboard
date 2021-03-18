@@ -21,19 +21,21 @@
       <p id="currentDay" class="lead"></p>
     </header>
    
-    <form>
+    
+
+    <div class="d-flex container align-items-stretch">
+       <div class="row">
+        <form class="col-4">
         <div class="input-group mb-3">
+            <h2>Search For a City</h2>
             <input id="search-input" type="text" class="form-control" placeholder="Type City Name Here" aria-label="Your city" aria-describedby="button-addon2">
             <div class="input-group-append">
-            <button class="btn btn-outline-secondary btn-danger " type="button" id="button-addon2">Button</button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
             </div>
         </div>  
-    </form>
+        </form> 
 
-    <div class="container">
-        
-
-        <div class="card" style="width: 18rem;">
+        <div class="col-6" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title" id="location"></h5>
               <p class="card-text" id="main-info"></p>
@@ -45,19 +47,24 @@
                   <li id="temperature"></li>
                   <li id="humidity"></li>
                   <li id="wind-speed"></li>
+                  <li id="uv-index"></li>
               </ul>
 
             </div>
            
         </div>
+       </div>
+    </div>
+    <div class="d-flex row">  
         <div class="d-flex justify-content-end" style="width: 18rem;">
-            <div class="card-body">
+            <div class="col-3">
               <h5 class="card-title">City Name</h5>
               <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
               <p class="card-text" id="main-info"></p>
             </div>
           </div>
           <div class="container">
+              <h2>5-Day Forcast</h2>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5">
               <div class="col">
                 <div class="card">

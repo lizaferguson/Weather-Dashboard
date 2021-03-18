@@ -10,10 +10,28 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    color:rgba(16, 20, 51)
+}
+
 .lead {
     text-align: center;
 }
 
 ul {
     list-style-type: none;
+}
+
+.card-body {
+    border-radius: 10px;
+    background-color: rgba(16, 20, 51, 0.6);
+}
+
+body {
+    color: white;
+}
+
+.btn {
+    background-color: tomato;
+    color: white;
 }
