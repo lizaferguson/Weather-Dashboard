@@ -21,24 +21,34 @@
       <p id="currentDay" class="lead"></p>
     </header>
    
+    <form>
+        <div class="input-group mb-3">
+            <input id="search-input" type="text" class="form-control" placeholder="Type City Name Here" aria-label="Your city" aria-describedby="button-addon2">
+            <div class="input-group-append">
+            <button class="btn btn-outline-secondary btn-danger " type="button" id="button-addon2">Button</button>
+            </div>
+        </div>  
+    </form>
+
     <div class="container">
+        
+
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">City Name</h5>
+              <h5 class="card-title" id="location"></h5>
               <p class="card-text" id="main-info"></p>
+                <div id="weather-icon">
+                  <img id="icon-img" src="" alt="weather icon">
+                </div>
+              
               <ul>
-                  <li id="weather-icon"></li>
+                  <li id="temperature"></li>
+                  <li id="humidity"></li>
+                  <li id="wind-speed"></li>
               </ul>
 
             </div>
-            <form>
-                <div class="input-group mb-3">
-                    <input id="search-input" type="text" class="form-control" placeholder="your city" aria-label="Your city" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-secondary btn-danger " type="button" id="button-addon2">Button</button>
-                    </div>
-                </div>  
-            </form>
+           
         </div>
         <div class="d-flex justify-content-end" style="width: 18rem;">
             <div class="card-body">

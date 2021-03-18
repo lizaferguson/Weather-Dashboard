@@ -13,3 +13,7 @@ h1 {
 .lead {
     text-align: center;
 }
+
+ul {
+    list-style-type: none;
+}

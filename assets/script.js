@@ -11,13 +11,28 @@ function getCurrentApi(requestUrl) {
         .then(function (data) {
             console.log(data);
             let conditions = data.list[0].weather[0].main;
-            $('#main-info').append(conditions);
+            let description = data.list[0].weather[0].description;
+            $('#main-info').append(conditions + "/" + description);
+
+            let temp = data.list[0].main.temp;
+            $('#temperature').append("Temperature: " + temp + " °F");
+
+            let humidity = data.list[0].main.humidity;
+            $('#humidity').append("Humidity: " + humidity + " %");
             
             let main = data.list[0].main;
-            let wind = data.list[0].wind;
+            
+            let wind = data.list[0].wind.speed;
+            $('#wind-speed').append("Wind Speed: " + wind + " mph");
+            
+            let location = data.city.name;
+            let date = data.list[0].dt_txt;
+            $('#location').append(location + " " + date);
             
             let icon = data.list[0].weather[0].icon;
-            $('#weather-icon').append(icon);
+            let iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+            // $('#weather-icon').append(icon);
+            $('#icon-img').attr('src', iconurl);
 
             console.log(conditions);
             console.log(main);
