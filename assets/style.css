@@ -14,6 +14,10 @@ h2 {
     color:rgba(16, 20, 51)
 }
 
+h5 {
+    font-weight: 700;
+}
+
 .lead {
     text-align: center;
 }
@@ -29,6 +33,7 @@ ul {
 
 body {
     color: white;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .btn {
