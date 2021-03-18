@@ -1,5 +1,5 @@
 let searchInput = $('#search-input');
-let currentApi = 'http://api.openweathermap.org/data/2.5/weather?q=';
+// let currentApi = 'http://api.openweathermap.org/data/2.5/weather?q=';
 let newApi = 'http://api.openweathermap.org/data/2.5/forecast?q=';
 let uvApi = 'http://api.openweathermap.org/data/2.5/uvi?';
 let apiKey = 'f0ab57e4693bb4a80535f0b3185f2865';
@@ -44,6 +44,13 @@ function getCurrentApi(requestUrl) {
             let lon= data.city.coord.lon;
             getUvApi(lat, lon);
 
+            for (i = 0; i < 5; i++) {
+                let forcastDay = data.list[i].dt_txt;
+                $('#forcast-date' + '-' + (i+1).toString()).append(forcastDay);
+            }
+
+
+
             console.log(lat);
             console.log(lon);
             console.log(conditions);
@@ -74,6 +81,7 @@ function getUvApi(lat, lon) {
 $('.btn').on('click', function (event) {
     event.preventDefault();
     let city = $('#search-input').val();
+    localStorage.setItem('city', city);
     let finalCurrentWeather = newApi + city + "&appid=" + apiKey + "&units=imperial";
     getCurrentApi(finalCurrentWeather);
 })
