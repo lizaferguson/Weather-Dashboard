@@ -1,7 +1,7 @@
 let searchInput = $('#search-input');
 // let currentApi = 'http://api.openweathermap.org/data/2.5/weather?q=';
-let newApi = 'http://api.openweathermap.org/data/2.5/forecast?q=';
-let uvApi = 'http://api.openweathermap.org/data/2.5/uvi?';
+let newApi = 'https://api.openweathermap.org/data/2.5/forecast?q=';
+let uvApi = 'https://api.openweathermap.org/data/2.5/uvi?';
 let apiKey = 'f0ab57e4693bb4a80535f0b3185f2865';
 
 //creating function to access the openweathermap api
