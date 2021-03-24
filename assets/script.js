@@ -36,7 +36,7 @@ function getCurrentApi(requestUrl) {
             
             //getting icon id and appending to page
             let icon = data.list[0].weather[0].icon;
-            let iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+            let iconurl = "https://openweathermap.org/img/w/" + icon + ".png";
             $('#icon-img').attr('src', iconurl);
 
             //getting latitude and longitude data to use in second function
